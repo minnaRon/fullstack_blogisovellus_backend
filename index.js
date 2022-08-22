@@ -1,8 +1,8 @@
 //tuodaan tiedostoon index.js:
+const config = require('./utils/config')
 const logger = require('./utils/logger')
 
 
-require('dotenv').config()
 //const http = require('http')
 const express = require('express') //
 const app = express()
@@ -43,7 +43,6 @@ app.post('/api/blogs', (request, response) => {
     })
 })
 
-const PORT = process.env.PORT || 3003
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`)
+app.listen(config.PORT, () => {
+  logger.info(`Server running on port ${config.PORT}`)
 })
