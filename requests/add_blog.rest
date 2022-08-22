@@ -2,7 +2,7 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Testiblogi 2",
+    "title": "Logger",
     "author": "Teemu Testailija 2",
     "url": "https://fullstackopen.com/",
     "likes": 0
