@@ -1,0 +1,10 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IklybWVsaSIsImlkIjoiNjMwYTkwMzJmNzNhMzkxNjk4NjY4YTgxIiwiaWF0IjoxNjYxNjM5ODExfQ.uDhWbhQdOin3N0lVQyakhzQJEQrxrCLIvwsryVOm56k
+
+{
+    "title": "populate 2",
+    "author": "Teemu Testailija",
+    "url": "https://fullstackopen.com/",
+    "likes": 0
+}
