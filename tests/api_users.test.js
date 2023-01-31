@@ -6,17 +6,19 @@ const app = require('../app')
 const User = require('../models/user')
 const api = supertest(app)
 
-
 const SECONDS = 1000
 jest.setTimeout(70 * SECONDS)
 
 describe('when db contains one user at begin', () => {
-
   beforeEach(async () => {
     await User.deleteMany({})
 
-    const passwordHash = await bcrypt.hash('testPassword',10)
-    const user = new User({ username: 'testUsername', name: 'testName', passwordHash })
+    const passwordHash = await bcrypt.hash('testPassword', 10)
+    const user = new User({
+      username: 'testUsername',
+      name: 'testName',
+      passwordHash,
+    })
     await user.save()
   })
 
@@ -41,7 +43,7 @@ describe('when db contains one user at begin', () => {
     const usersAtEnd = await helper.usersInDb()
     expect(usersAtEnd).toHaveLength(userAtStart.length + 1)
 
-    const usernames = usersAtEnd.map(u => u.username)
+    const usernames = usersAtEnd.map((u) => u.username)
     expect(usernames).toContain(newUser.username)
   })
 

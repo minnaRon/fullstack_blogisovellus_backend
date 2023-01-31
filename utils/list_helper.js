@@ -9,7 +9,11 @@ const totalLikes = (blogs) => {
 }
 
 const favoriteBlog = (blogs) => {
-  return blogs.length === 0 ? null : blogs.filter(blog => blog.likes === Math.max(...blogs.map((blog) => blog.likes)))[0]
+  return blogs.length === 0
+    ? null
+    : blogs.filter(
+        (blog) => blog.likes === Math.max(...blogs.map((blog) => blog.likes))
+      )[0]
 }
 
 const mostBlogs = (blogs) => {
@@ -24,7 +28,7 @@ const mostBlogs = (blogs) => {
       .head()
       .value()
 
-    return { 'author': most[0], 'blogs':  most[1] }
+    return { author: most[0], blogs: most[1] }
   }
   return null
 }
@@ -40,11 +44,15 @@ const mostLikes = (blogs) => {
       .entries()
       .head()
       .value()
-    return { 'author': most[0], 'likes':  most[1] }
+    return { author: most[0], likes: most[1] }
   }
   return null
 }
 
 module.exports = {
-  dummy, totalLikes, favoriteBlog, mostBlogs, mostLikes
+  dummy,
+  totalLikes,
+  favoriteBlog,
+  mostBlogs,
+  mostLikes,
 }
